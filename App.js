@@ -1,3 +1,18 @@
-import LoginScreen from './screens/LoginScreen'
+import {
+	createStackNavigator,
+} from 'react-navigation'
 
-export default LoginScreen
+import LoginScreen from './screens/LoginScreen'
+import RegisterScreen from './screens/RegisterScreen'
+import Main from './screens/main/Main'
+
+const root = createStackNavigator({
+	Login: LoginScreen,
+	Register: RegisterScreen,
+	Main: Main,
+}, {
+	initialRouteName: 'Login',
+});
+
+
+export default root;
