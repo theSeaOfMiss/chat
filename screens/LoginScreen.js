@@ -14,9 +14,13 @@ import constants from "../bin/constants";
 let REQUEST_URL = constants.website + '/login';
 
 
-export default class loginScreen extends Component {
+export default class LoginScreen extends Component {
 	username = '';    //  用户名
 	password = '';    // 密码
+
+	static navigationOptions = {
+		title: '登入',
+	};
 
 	constructor(props) {
 		super(props);
@@ -67,14 +71,13 @@ export default class loginScreen extends Component {
 					(err) => {
 						if (err) {
 							this.setState({message: '登入失败，请尝试重新登入！'});
-							return
 						}
 					}
 					);
 				this.props.navigation.navigate('Main');
 			}
 		}).catch((error)=>{
-			console.error(error);
+			this.setState({message: error});
 		});
 
 	};

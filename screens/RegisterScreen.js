@@ -18,6 +18,10 @@ export default class RegisterScreen extends Component {
 	username = '';    //  用户名
 	password = '';    // 密码
 
+	static navigationOptions = {
+		title: '注册',
+	};
+
 	constructor(props) {
 		super(props);
 		this.state = { message: '' };
